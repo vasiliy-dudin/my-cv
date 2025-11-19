@@ -1,59 +1,45 @@
-# Tatiana Fokina Resume
+# CV Generator
 
-This small project includes two versions of my resume: a web page and a PDF.
+Simple CV generator that builds HTML from templates and generates PDF using WeasyPrint.
 
-## Technologies
+All content is stored in simple YAML files, making it easy to quickly adapt your CV for specific job openings.
 
-HTML, [Nunjacks](https://mozilla.github.io/nunjucks/), CSS, JavaScript, [Node.js](https://nodejs.org/en/), [GitHub workflows](https://docs.github.com/en/actions/writing-workflows/).
+## Tech Stack
 
-## Commands
+- **Templates**: [Nunjucks](https://mozilla.github.io/nunjucks/)
+- **PDF**: [WeasyPrint](https://weasyprint.org/) (Python)
 
-Install [pnpm](https://pnpm.io/):
+## Setup
 
-```bash
-npm install -g pnpm
-```
-
-The second installation option:
+Install dependencies:
 
 ```bash
 pnpm install
 ```
 
-For Windows users run the standalone script and open your IDE or PowerShell as administrator (″run as administrator″):
+Setup Python environment (WSL on Windows):
 
 ```bash
-iwr https://get.pnpm.io/install.ps1 -useb | iex
+# In WSL
+python3 -m venv venv
+source venv/bin/activate
+pip install weasyprint
 ```
 
-Build HTML:
+## Usage
+
+Build HTML and generate PDF:
 
 ```bash
 pnpm run build
 ```
 
-Generate PDF version based on HTML:
+Or run separately:
 
 ```bash
-pnpm run generate-pdf
+# Build HTML only
+pnpm run _build-html
+
+# Generate PDF only (requires HTML build first)
+pnpm run _build-pdf
 ```
-
-## Caveats
-
-Currently, the PDF version of the CV isn't fully accessible from the box. I'm going to fix it one day but not today 😅
-
-Document accessibility issues:
-
-- ″StructParent″ entry missing the annotation (`<a>`)
-- Path object not tagged (`<b>`, `border`, bullet points)
-- ″Link″ annotation is not nested inside a ″Link″ structure element (`<a>`)
-- Alternative description missing for an annotation (`<a>`)
-- ″LI″ element must content exactly one ″LBody″ element and may contain ″Lbl″ elements (`<ul>`, `<li>`).
-
-[Explanations of issues](https://pac.pdf-accessibility.org/en/resources/pac-2024-quality-checks/) 🤔
-
-For evaluating the accessibility of PDF files I recommended using [PAC (PDF Accessibility Checker)](https://pac.pdf-accessibility.org/en/) and screen readers.
-
-## Licenses
-
-Icons are from [Lucide](https://lucide.dev) and licensed under [the ISC License](https://lucide.dev/license). The font, IBM Plex, is licensed under [OFL](https://github.com/IBM/plex/blob/master/LICENSE.txt).
