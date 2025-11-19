@@ -1,13 +1,13 @@
 {
-  "name": "cv-project",
-  "author": "Tatiana Fokina",
+  "name": "quick-cv-generator",
+  "author": "Vasya Dudin",
   "description": "Template for my CV with auto generation PDF version",
   "main": "generate_pdf.js",
   "license": "ISC",
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
-    "build": "node scripts/build.js",
-    "generate-pdf": "node scripts/generate_pdf.js"
+    "_build-html": "node scripts/build.js",
+    "_build-pdf": "wsl bash -c \"source venv/bin/activate && python scripts/generate_pdf.py\"",
+    "build": "npm run _build-html && npm run _build-pdf"
   },
   "dependencies": {
     "fs-extra": "^11.3.2",

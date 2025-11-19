@@ -5,8 +5,9 @@ const { minify } = require("html-minifier-terser");
 const yaml = require('js-yaml');
 
 const srcDir = path.join(__dirname, "..", "src", "views");
-const outDir = path.join(__dirname, "..", "docs");
+const outDir = path.join(__dirname, "..", ".tmp");
 const dataDir = path.join(__dirname, "..", "src", "data");
+const stylesDir = path.join(srcDir, "styles");
 
 // Configure Nunjucks
 nunjucks.configure(srcDir, { autoescape: true });
@@ -51,8 +52,17 @@ async function compileAndMinifyTemplate(templatePath, outputPath) {
 	console.log(`Compiled and minified: ${outputPath}`);
 }
 
+// Copy styles to output directory
+function copyStyles() {
+	const outStylesDir = path.join(outDir, "styles");
+	fs.ensureDirSync(outStylesDir);
+	fs.copySync(stylesDir, outStylesDir);
+	console.log(`Copied styles to: ${outStylesDir}`);
+}
+
 // Compile and minify index.njk
 (async () => {
+	copyStyles();
 	await compileAndMinifyTemplate(
 		path.join(srcDir, "index.njk"),
 		path.join(outDir, "index.html"),
