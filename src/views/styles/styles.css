@@ -1,15 +1,15 @@
 :root {
-	--background-color: rgb(69, 73, 72);
+	--background-color: #454948;
 	--background-content-color: #fff;
 	--link-color: #454948;
-	--underline-color: rgb(157, 157, 157);
-	--decorative-color: rgb(69, 73, 72);
-	--h1-color: rgb(0, 0, 0);
-	--h2-color: rgb(40, 40, 40);
-	--h3-color: rgb(60, 60, 60);
-	--text-color: rgb(65, 65, 65);
+	--underline-color: #9d9d9d;
+	--decorative-color: #454948;
+	--h1-color: #000;
+	--h2-color: #282828;
+	--h3-color: #3c3c3c;
+	--text-color: #414141;
 	--border-color: #46DF86;
-	--sections-gap: 32px;
+	--sections-gap: 16px;
 }
 
 *,
