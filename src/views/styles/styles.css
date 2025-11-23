@@ -1,14 +1,13 @@
 :root {
-	--background-color: #454948;
+	--background-color: #353f52;
 	--background-content-color: #fff;
-	--link-color: #454948;
-	--underline-color: #9d9d9d;
-	--decorative-color: #454948;
 	--h1-color: #000;
 	--h2-color: #282828;
 	--h3-color: #3c3c3c;
 	--text-color: #414141;
-	--border-color: #46DF86;
+	--link-color: #454948;
+	--underline-color: #9d9d9d;
+	--border-color: #3c3c3c;
 	--sections-gap: 16px;
 }
 
@@ -61,9 +60,9 @@ body {
 /* Header */
 
 .header {
-	margin-bottom: 20px;
+	margin-bottom: var(--sections-gap);
 	padding: 0 0 var(--sections-gap);
-	border-bottom: 1px solid var(--border-color);
+	border-bottom: 3px solid var(--border-color);
 }
 
 .header__contacts-list {
@@ -127,7 +126,7 @@ body {
 	font-style: normal;
 	line-height: 1.1;
 	color: var(--h2-color);
-	border-top: 1px solid var(--border-color);
+	border-top: 3px solid var(--border-color);
 }
 
 .main__job + .main__job {
