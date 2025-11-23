@@ -47,16 +47,18 @@ async function compileAndMinifyTemplate(templatePath, outputPath) {
 		cv: cvData,
 		site: siteData,
 	});
-	const minifiedHtml = await minify(renderedHtml, minifyOptions);
-	fs.writeFileSync(outputPath, minifiedHtml);
-	console.log(`Compiled and minified: ${outputPath}`);
+	// Skip minification in dev mode for Vite compatibility
+	const isDev = process.env.NODE_ENV !== "production";
+	const html = isDev ? renderedHtml : await minify(renderedHtml, minifyOptions);
+	fs.writeFileSync(outputPath, html);
+	console.log(`Compiled ${isDev ? "" : "and minified "}${outputPath}`);
 }
 
 // Copy styles to output directory
 function copyStyles() {
 	const outStylesDir = path.join(outDir, "styles");
 	fs.ensureDirSync(outStylesDir);
-	fs.copySync(stylesDir, outStylesDir);
+	fs.copySync(stylesDir, outStylesDir, { overwrite: true });
 	console.log(`Copied styles to: ${outStylesDir}`);
 }
 
