@@ -4,6 +4,11 @@
 		margin: 10mm;
 	}
 
+	* {
+		orphans: 1;
+		widows: 1;
+	}
+
 	body {
 		display: initial;
 		min-height: unset;
@@ -13,5 +18,38 @@
 
 	.container {
 		padding: 0;
+		border-radius: 0;
+	}
+
+	.main__job {
+		page-break-inside: auto;
+		break-inside: auto;
+	}
+
+	.main__job-header {
+		page-break-inside: avoid;
+		break-inside: avoid;
+		page-break-after: avoid;
+		break-after: avoid;
+	}
+
+	.main__text {
+		page-break-before: avoid;
+		break-before: avoid;
+	}
+
+	.main__job-list {
+		page-break-before: avoid;
+		break-before: avoid;
+	}
+
+	.main__job-item {
+		page-break-inside: avoid;
+		break-inside: avoid;
+	}
+
+	.main__title {
+		page-break-after: avoid;
+		break-after: avoid;
 	}
 }
