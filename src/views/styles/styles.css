@@ -8,7 +8,13 @@
 	--link-color: #454948;
 	--underline-color: #9d9d9d;
 	--border-color: #3c3c3c;
-	--sections-gap: 16px;
+	--sections-gap: 12px;
+	
+	/* Font sizes */
+	--font-size-base: 14px;
+	--font-size-h1: 29px;
+	--font-size-h2: 22px;
+	--font-size-h3: 16px;
 }
 
 *,
@@ -24,7 +30,7 @@ body {
 	min-height: 100vh;
 	margin: 30px;
 	font-family: Arial, sans-serif;
-	font-size: 16px;
+	font-size: var(--font-size-base);
 	font-weight: 400;
 	font-style: normal;
 	line-height: 1.5;
@@ -60,9 +66,8 @@ body {
 /* Header */
 
 .header {
-	margin-bottom: var(--sections-gap);
 	padding: 0 0 var(--sections-gap);
-	border-bottom: 3px solid var(--border-color);
+	/* border-bottom: 3px solid var(--border-color); */
 }
 
 .header__contacts-list {
@@ -87,7 +92,7 @@ body {
 	grid-area: 1 / 1 / 2 / 3;
 	margin: 0;
 	font-family: 'Arial black';
-	font-size: 31px;
+	font-size: var(--font-size-h1);
 	font-weight: 800;
 	font-style: normal;
 	line-height: 1.1;
@@ -99,7 +104,7 @@ body {
 	margin-top: 0;
 	margin-bottom: 12px;
 	padding-top: 4px;
-	font-size: 24px;
+	font-size: var(--font-size-h2);
 	font-weight: 600;
 	font-style: normal;
 	line-height: 1.1;
@@ -119,9 +124,9 @@ body {
 }
 
 .main__title {
-	margin: var(--sections-gap) 0 16px;
+	margin: var(--sections-gap) 0 8px;
 	padding-top: var(--sections-gap);
-	font-size: 25px;
+	font-size: var(--font-size-h2);
 	font-weight: 600;
 	font-style: normal;
 	line-height: 1.1;
@@ -134,7 +139,7 @@ body {
 }
 
 .main__job-title {
-	font-size: 18px;
+	font-size: var(--font-size-h3);
 	font-weight: 600;
 	font-style: normal;
 	line-height: 1.1;
@@ -142,7 +147,7 @@ body {
 }
 
 .main__job-info {
-	font-size: 18px;
+	font-size: var(--font-size-h3);
 	line-height: 1.3;
 }
 
