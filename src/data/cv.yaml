@@ -4,14 +4,12 @@ personal:
   job title: Senior Product Designer
   location: London, UK
   link:
-    site label: LinkedIn
-    pdf label: linkedin.com/in/vas-dudin
+    label: linkedin.com/in/vas-dudin
     url: https://www.linkedin.com/in/vas-dudin/
   email:
     address: dudin.vasiliy@gmail.com
   portfolio:
-    site label: Portfolio
-    pdf label: Portfolio
+    label: Portfolio
     url: https://dudin.design
 summary:
   title: Обо мне
