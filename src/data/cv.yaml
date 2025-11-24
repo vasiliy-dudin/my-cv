@@ -1,132 +1,113 @@
 ---
 personal:
-  candidate name: Tatiana Fokina
-  job title: Expert Accessibility Engineer
-  location: Tbilisi, Georgia
+  candidate name: Vasya Dudin
+  job title: Senior Product Designer
+  location: London, UK
   link:
     site label: LinkedIn
-    pdf label: linkedin.com/in/tatiana-fokina
-    url: http://www.linkedin.com/in/tatiana-fokina/
+    pdf label: linkedin.com/in/vas-dudin
+    url: https://www.linkedin.com/in/vas-dudin/
   email:
-    address: fokinatatian@gmail.com
+    address: dudin.vasiliy@gmail.com
   portfolio:
     site label: Portfolio
-    pdf label: fokina-dev.ru
-    url: https://fokina-dev.ru/
-  pdf:
-    label: PDF version
-    url: https://tatianafokina.github.io/tatiana-fokina-cv/tatiana-fokina-cv.pdf
+    pdf label: Portfolio
+    url: https://dudin.design
 summary:
-  title: Summary
+  title: Обо мне
   paragraphs:
-  - Expert Accessibility Engineer with 5+ years in Web/Frontend Development, specializing
-    in designing intuitive interfaces that prioritize user needs at the fundamental
-    principle in the development process-certified professional in accessibility core
-    competencies (CPACC).
-  - Demonstrates advanced proficiency in web technologies, including HTML, CSS, and
-    JavaScript. Experiences in W3C standards, web accessibility specifications, and
-    guidelines (WAI-ARIA, WCAG, ATAG).
-  - Dedicates to creating inclusive digital experiences enabling equal access for
-    all users. Champions accessibility initiatives to transform company development
-    processes, prioritizing user-centered design while fostering a culture of lifelong
-    learning and knowledge exchange.
-experience:
-  title: Work experience
-  last:
-    company: Doka Guide
-    job title: Editor, accessibility engineer, contributor.
-    time period: August 2022 – Present
-    location: remote
-    achievements:
-    - Architected a content plan, directed and launched the Accessibility section
-      within a 3-month timeframe.
-    - Collaborated with over 70 contributors to develop articles on accessibility
-      and other web technologies.
-    - Crafted more than 100 articles on topics, such as accessibility, HTML, and CSS.
-    - Executed a WCAG-EM-based accessibility audit, resolving 29 issues on the project's
-      website.
-    - Delivered accessibility guidance through 1:1 communications and GitHub pull
-      request reviews.
-    - Collaborated closely with editors, designers, and developers through weekly
-      agile meetings, ensuring alignment on project goals while enhancing communication
-      strategy and contributing to more efficient workflows.
-  previous:
-    company: JUG Ru Group
-    job title: Frontend developer.
-    time period: May 2019 – June 2020
-    location: St. Petersburg, Russia
-    achievements:
-    - Led accessibility audits on 10+ conference sites, identifying and fixing accessibility
-      bugs improved Lighthouse accessibility scores by 48% across all projects.
-    - Maintained and modernized 10+ legacy projects, improving performance by 15%
-      through the implementation of recommended coding practices and ensuring functionality
-      for 5,000+ users.
-    - Engineered 4 features for user accounts on the ticket platform in collaboration
-      with designers, frontend, and backend developers, enhancing user experience
-      and functionality.
-    - Co-developed a live streaming conference platform from concept to launch within
-      a 2-month timespan.
-  initial:
-    company: Self-employment
-    job title: Freelance web developer.
-    time period: December 2016 – May 2019
-    location: St. Petersburg, Russia
-    achievements:
-    - Conceptualized and implemented 7 landing pages and 3 multi-page sites for clients,
-      strengthening their online presence.
-    - Developed 3 templates for MODX and Drupal, simplifying client content management
-      processes.
-    - Accomplished automatic testing across 5 client projects, detecting and rectifying
-      bugs and technical issues while enhancing accessibility features to meet WCAG
-      2.1 level AA.
+  - Product Designer с 14+ годами опыта в международных SaaS, EdTech, E-Commerce и FinTech компаниях. Специализируюсь на дизайне сложных B2B и B2C продуктов, проектировании дизайн-систем, исследованиях, стратегическом планировании, доступности и инклюзивном дизайне.
+  - Умею во фронтенд (HTML, JS, CSS, React), это позволяет быстрее создавать подходящий дизайн и говорить с командой на одном языке.
 skills:
-  title: Skills
+  title: Навыки
   skillset 1:
-    name: Languages and frameworks.
-    set: HTML, JavaScript (ECMAScript 6), TypeScript, Angular, Next.js, CSS, Sass/SCSS,
-      Stylus, Nunjacks.
+    name: Основное
+    set:
+    - Дизайн сложных продуктов, human-centered design, сбор требований, эвристики, ТРИЗ, системное и стратегического видение.
+    - Эксперт в Figma и Axure RP. делаю сложные вложенные компоненты с auto layout, плагины, удобную организацию макетов.
+    - Дизайн-системы, дизайн-токены, гайдлайны, палитры с учётом восприятия, построение процесса внедрения и обновления ДС.
+    - UX-райтинг на английском и русском, информационный стиль.
+    - Внимательность к деталям, умею глубоко погружаться в тему при необходимости.
   skillset 2:
-    name: Accessibility.
-    set: WAI-ARIA 1.2, WCAG 2.2, ATAG 2.0, WCAG-EM 1.0, NVDA, JAWS, VoiceOver (desktop
-      and mobile), TalkBack, axe DevTools, Wave Evaluation Tool (WAVE), Accessibility
-      Insights, accessibility bookmarklets, Section 508, EN 301 549, Web Accessibility
-      Directive (WAD), European Accessibility Act (EAA).
+    name: UX-исследования и продуктовая аналитика
+    set:
+    - Продуктовые метрики, data-driven и data-informed подходы.
+    - Юзабилити-тестирование, интервью, анкетирование, Jobs to be Done, Job Stories, карточная сортировка, дневниковые исследования, A/B-тестирование.
+    - 'Веб-аналитика: Google Analytics, Amplitude, Яндекс Метрика, Inspectlet, BigQuery, SQL.'
   skillset 3:
-    name: Tools and platforms.
-    set: Git, GitHub, GitLab, Gulp, Storybook, 11ty, Parcel, Figma.
+    name: Моделирование и картирование
+    set: User Flow, Customer Journey Mapping (CJM), информационная архитектура, UML Use Case Diagram, UML Activity Diagram, BPMN, Scenario Map, Service Blueprint.
+  skillset 4:
+    name: Frontend
+    set: HTML, JavaScript, React, CSS, SCSS/SASS, 11ty, Git, accessibility. Общаюсь с разработкой на одном языке.
+  skillset 5:
+    name: Доступность и инклюзивный дизайн
+    set: Улучшаю дизайн-системы, процессы дизайна и разработки, провожу аудиты доступности, пишу гайды по доступному дизайну и разработке.
+  skillset 6:
+    name: Командное взаимодействие
+    set: Фасилитация, построение процессов, менторство, дача фидбека, презентация, кросс-командное взаимодействие, основы Scrum, проактивность, открытость в коммуникациях.
+experience:
+  title: Опыт
+  last:
+    company: Лента
+    job title: Senior Product Designer
+    time period: Апрель 2025 – настоящее время
+    location: удалённо
+    achievements:
+    - 'Значительно сократил стоимость поддержки: спроектировал единую для всех сетей платформу для работы с клиентскими профилями брендов, историей покупок и программой лояльности.'
+    - 'Ускорил процесс дизайна дизайна и разработки админки: создал с нуля UI-кит с 50+ компонентами и систему автоматической генерации цветовой палитры для фронтенда.'
+    - 'Спроектировал архитектуру дизайн-системы для всех брендов компании: разработал структуру системы и проектов, создал стандартизированную систему дизайн-токенов. Курировал внедрение дизайн-системы и консультировал команду — ускорил запуск новых функций и повысил унификацию интерфейсов'
+    - 'Значительно упростил адаптацию новых сотрудников: сделал простой документ онборднгиа с чеклистом первых недель.'
+    - 'Руководил дизайнерами команды Пикер: занимался наймом и адаптацией, проводил 1:1, оптимизировал дизайн-процессы и взаимодействие в команде.'
+    description: Сеть гипермаркетов, в которою входят Лента, OBI, Улыбка радуги, Утконос и другие торговые сети.
+  previous:
+    company: Нетология
+    job title: Senior Product Designer
+    time period: Декабрь 2022 — март 2025
+    location: удалённо
+    achievements:
+    - Снизил затраты на координаторов и поддержку, сократив ручную работу команды. Для этого спроектировал автоматическую обработку запросов, приостановку и продление обучения, автоматический доступ к модулям
+    - Увеличил выручку от реферальной программы и количество платящих пользователей, которые приходят по рекомендациям за счёт редизайна и улучшения юзабилити.
+    - Лидировал проектирование и внедрение дизайн-системы. Для этого спланировал роадмап, ввёл дизайн-токены и цветовую палитру с учётом восприятия яркости, унифицировал компоненты и стили.
+    - Провёл первый этап глобального редизайна. Для этого спланировал и провёл пользовательское исследования, нашёл проблемы студентов, составил схему информационной архитектуры, CJM и job stories., заложив фундамент для дальнейшего редизайна.
+    - Оптимизировал дизайн-процессы и провёл воркшопы для дизайнеров и продуктовых менеджеров. Этим я повысил качество дизайн-решений и скорость проектирования.
+    description: 'Вторая по популярности в России EdTech-платформа доп. образования, 2M MAU. Приоритеты команды: мотивация и цели студентов, retention, юзабилити, COR, NPS, churn, LMS.'
+  third:
+    company: Яндекс Практикум
+    job title: Senior Product Designer (команда «Школьной математики»)
+    time period: Июль 2021 — май 2022
+    location: удалённо
+    achievements:
+    - Снизил затраты на поддержку на 69% (52% → 16%) и улучшил вовлечённость родителей на 7% за счёт изменения дизайна (новый онбординг для родителей и учеников, дизайн личных кабинетов и формы логина). Для этого проанализировал веб-аналитику (поведение пользователей и веб-визор Яндекс.Метрики), составил user flow и value stream map, проанализировал частотность use cases.
+    - 'Менторил 2 дизайнеров команды: обучил продвинутым техникам Figma (auto layout, сложные компоненты), помог с проектированием обучающих механик.'
+    - 'Руководил развитием дизайн-системы: унифицировал 50+ компонентов и стилей, внедрил дизайн-токены и цветовую палитру с учётом человеческого восприятия, улучшил accessibility и удобочитаемость текстов.'
+    description: Международный сервис обучения IT-профессиям, который включает около 60 курсов.
+  fourth:
+    company: SEMrush
+    job title: Senior UX Designer
+    time period: Июнь 2018 — январь 2020
+    location: Санкт-Петербург
+    achievements:
+    - Улучшил метрики retention и ARPPU в продуктах Site Audit и Oppty. Для этого спроектировал и улучшил интерфейс этих сервисов, проанализировал фидбек пользователей, изучил веб-аналитику (Google Analytics, BigQuery + SQL, Inspectlet) и провёл UX-исследования (юзабилити-тестирование, интервью, опросы). Для проектирования использовал Axure, информационную архитектуру, CJM, User Flow, scenario map, BPMN, UML Activity Diagram и Use Case Diagram.
+    - Координировал работу с разработкой, продактом и UI-дизайнерами и UX-писателем на всех этапах разработки, презентовал решения стейкхолдерам
+    - Дополнил гайды дизайн-системы, написал руководство по юзабилити-тестированию.
+    description: Международная компания, высоконагруженный SaaS для интернет-маркетологов. Был частью департамента из 17 UX-дизайнеров и 10 UI-дизайнеров, работал в трёх scrum-командах. В т.ч. в Site Audit, одном из самых популярных инструментов.
+  fifth:
+    company: Binomo (404 Group)
+    job title: UX/UI Designer
+    time period: Февраль 2018 — июнь 2018
+    location: Санкт-Петербург
+  initial:
+    company: Фриланс
+    job title: UX Designer
+    time period: Июнь 2011 — февраль 2017
+    location: Санкт-Петербург
+hobbies:
+  title: Хобби
+  content: Увлечён фронтендом, модульными синтезаторами, фотографией, DnD и играми. Интересуюсь архитектурой, урбанизмом, разными сторонами дизайна и шавермой.
 education:
-  title: Education
-  place: St. Petersburg State Institute of Culture
-  degree: Specialist's degree in Integrated Library Systems (ILS).
-  year: June 2015
-  location: St. Petersburg, Russia
-other:
-  title: Other
-  sections:
-  - name: Courses and training.
-    content:
-    - text: Practical Accessibility course.
-  - name: Community experience.
-    content:
-    - text: 'Google''s Women Techmakers ambassador (WTM), host '
-    - text: Inclusive Pineapple
-      link: https://inclusivepineapple.github.io/
-    - text: " podcast, organizer of "
-    - text: pitera11y_meetup
-      link: https://www.youtube.com/playlist?list=PLTdS5E3zupkGg0FoMoWB5FD2tlBrSWUQB/
-    - text: " and Doka Guide meetup."
-  - name: Publications and talks.
-    content:
-    - text: 'Translation of '
-    - text: Accessibility Myths project
-      link: https://a11ymyths.com/ru/
-    - text: "; post "
-    - text: Understanding Skip Links
-      link: https://a11y-blog.dev/en/articles/understanding-a-skip-link/
-    - text: " on professional blog; article "
-    - text: What Are ARIA Live Regions
-      link: https://doka.guide/a11y/live-region/
-    - text: " on Doka Guide; talk "
-    - text: Accessibility and Typography
-      link: https://youtu.be/F64bGVrI4TY?si=7tzAj-u0EA0211K3
-    - text: " at Tbilisi A11y & UX Day."
+  title: Образование
+  place: Санкт-Петербургский горный университет
+  degree: Институт информационных систем и вычислительной техники, информационные системы и технологии, неоконченное высшее.
+  year: 2007—2012
+  location: Санкт-Петербург

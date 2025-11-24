@@ -1,14 +1,14 @@
 ---
 xmp:
-  title: Tatiana Fokina CV
-  author: Tatiana Fokina
-  subject: Expert accessibility engineer
-  keywords: CV, resume, Tatiana Fokina, expert accessibility engineer
+  title: Vasya Dudin's CV
+  author: Vasya Dudin
+  subject: Product Designer
+  keywords: CV, resume, Vasya Dudin, product designer
   creator: PDF Generator Script
-  producer: Puppeteer
+  producer: WeasyPrint
 html:
   lang: en
-  title: Tatiana Fokina Resume
+  title: Vasya Dudin's CV
   description: Work in progress...
   og title: ''
   og description: ''

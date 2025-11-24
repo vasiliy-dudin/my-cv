@@ -2,7 +2,10 @@
 
 {% block content %}
 	<div class="main">
-		<section class="main__section">
+		<section class="main__section" aria-labelledby="summary">
+			<h2 class="main__title" id="summary">
+				{{ cv.summary.title }}
+			</h2>
 			{% for paragraph in cv.summary.paragraphs %}
 				<p class="main__text">
 					{{ paragraph }}
@@ -14,7 +17,7 @@
 			<h2 class="main__title" id="experience">
 				{{ cv.experience.title }}
 			</h2>
-			{% for job in ["last", "previous", "initial"] %}
+			{% for job in ["last", "previous", "third", "fourth", "fifth", "initial"] %}
 				{% if cv.experience[job] %}
 					<article class="main__job">
 						<header class="main__job-header">
@@ -35,6 +38,11 @@
 								{{ cv.experience[job]["job title"] }}
 							</span>
 						</header>
+						{% if cv.experience[job].description %}
+							<p class="main__text">
+								{{ cv.experience[job].description }}
+							</p>
+						{% endif %}
 						<ul class="main__job-list">
 							{% for achievement in cv.experience[job].achievements %}
 								{% if achievement %}
@@ -53,11 +61,20 @@
 			<h2 class="main__title" id="skills">
 				{{ cv.skills.title }}
 			</h2>
-			{% for subgroup in ["skillset 1", "skillset 2", "skillset 3"] %}
+			{% for subgroup in ["skillset 1", "skillset 2", "skillset 3", "skillset 4", "skillset 5", "skillset 6"] %}
 				{% if cv.skills[subgroup] %}
-					<p class="main__text">
-						<b>{{ cv.skills[subgroup].name }}</b> {{ cv.skills[subgroup].set }}
-					</p>
+					<div class="main__text">
+						<b>{{ cv.skills[subgroup].name }}</b>
+						{% if cv.skills[subgroup].set is iterable and cv.skills[subgroup].set is not string %}
+							<ul class="main__job-list">
+								{% for skill in cv.skills[subgroup].set %}
+									<li class="main__job-item">{{ skill }}</li>
+								{% endfor %}
+							</ul>
+						{% else %}
+							{{ cv.skills[subgroup].set }}
+						{% endif %}
+					</div>
 				{% endif %}
 			{% endfor %}
 		</section>
@@ -84,21 +101,13 @@
 			</article>
 		</section>
 
-		<section class="main__section" aria-labelledby="other">
-			<h2 class="main__title" id="other">
-				{{ cv.other.title }}
+		<section class="main__section" aria-labelledby="hobbies">
+			<h2 class="main__title" id="hobbies">
+				{{ cv.hobbies.title }}
 			</h2>
-			{% for section in cv.other.sections %}
-				<p class="main__text">
-					<b>{{ section.name }}</b> {% for item in section.content -%}
-						{%- if item.link -%}
-							<a class="main__link link" href="{{ item.link }}">{{ item.text }}</a>
-						{%- else -%}
-							{{ item.text }}
-						{%- endif -%}
-					{%- endfor %}
-				</p>
-			{% endfor %}
+			<p class="main__text">
+				{{ cv.hobbies.content }}
+			</p>
 		</section>
 	</div>
 {% endblock %}
