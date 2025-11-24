@@ -23,6 +23,14 @@ const siteData = yaml.load(
 	fs.readFileSync(path.join(dataDir, "site.yaml"), "utf8")
 );
 
+// Merge private data if exists
+const privateDataPath = path.join(dataDir, "cv.private.yaml");
+if (fs.existsSync(privateDataPath)) {
+	const privateData = yaml.load(fs.readFileSync(privateDataPath, "utf8"));
+	// Deep merge: private data overrides public data
+	Object.assign(cvData.personal, privateData.personal);
+}
+
 // Combine data
 const data = {
 	cv: cvData,

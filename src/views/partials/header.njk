@@ -24,6 +24,14 @@
 				<li class="header__contact-item">
 					<a
 						class="header__contact-link link"
+						href="tel:{{ cv.personal.phone["number"] }}"
+					>
+						{{ cv.personal.phone["number"] }}
+					</a>
+				</li>
+				<li class="header__contact-item">
+					<a
+						class="header__contact-link link"
 						href="{{ cv.personal.link["url"] }}"
 					>
 						<span class="header__contact-link-pdf">

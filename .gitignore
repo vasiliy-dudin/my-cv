@@ -9,3 +9,6 @@
 /Thumbs.db/
 !cv.json
 !site.json
+
+# Private data
+cv.private.yaml
