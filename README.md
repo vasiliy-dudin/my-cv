@@ -28,18 +28,45 @@ pip install weasyprint
 
 ## Usage
 
-Build HTML and generate PDF:
+Build HTML and generate PDF with YAML file name prompt:
 
 ```bash
 pnpm run build
 ```
 
-Or run separately:
+This will prompt you for a YAML file name (e.g., `google` for `cv-google.yaml`) and generate a corresponding PDF.
+
+Development mode:
 
 ```bash
-# Build HTML only
-pnpm run _build-html
+# Dev mode with interactive YAML file name prompt
+pnpm run dev
+```
 
-# Generate PDF only (requires HTML build first)
-pnpm run _build-pdf
+This will ask you for a YAML file name, generate HTML from the corresponding YAML file, and start a development server with live reload on YAML changes.
+
+## File Structure
+
+- `src/data/cv-{name}.yaml` - CV data files for different companies/positions
+- `src/data/site.yaml` - Site-wide metadata
+- `src/data/cv.private.yaml` - Private data (optional, overrides public data)
+- `.tmp/index.html` - Generated HTML for preview
+- `dist/cv-{name}.pdf` - Generated PDF files
+
+## Examples
+
+To create a CV for Google:
+
+```bash
+pnpm run build
+# When prompted, enter: google
+# This will use src/data/cv-google.yaml and create dist/cv-google.pdf
+```
+
+To work on a CV in development mode:
+
+```bash
+pnpm run dev
+# When prompted, enter: google
+# This will start a dev server and watch src/data/cv-google.yaml for changes
 ```

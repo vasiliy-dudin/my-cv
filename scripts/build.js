@@ -1,82 +1,76 @@
-const fs = require("fs-extra");
-const path = require("path");
-const nunjucks = require("nunjucks");
-const { minify } = require("html-minifier-terser");
-const yaml = require('js-yaml');
+const fs = require('fs');
+const { spawn } = require('child_process');
+const { promptYamlFileName, generateHtml, generatePdf, formatFileName, getYamlFilePath } = require('./_utils');
 
-const srcDir = path.join(__dirname, "..", "src", "views");
-const outDir = path.join(__dirname, "..", ".tmp");
-const dataDir = path.join(__dirname, "..", "src", "data");
-const stylesDir = path.join(srcDir, "styles");
-
-// Configure Nunjucks
-nunjucks.configure(srcDir, { autoescape: true });
-
-// Ensure the output directory exists
-fs.ensureDirSync(outDir);
-
-// Read YAML data
-const cvData = yaml.load(
-	fs.readFileSync(path.join(dataDir, "cv.yaml"), "utf8")
-);
-const siteData = yaml.load(
-	fs.readFileSync(path.join(dataDir, "site.yaml"), "utf8")
-);
-
-// Merge private data if exists
-const privateDataPath = path.join(dataDir, "cv.private.yaml");
-if (fs.existsSync(privateDataPath)) {
-	const privateData = yaml.load(fs.readFileSync(privateDataPath, "utf8"));
-	// Deep merge: private data overrides public data
-	Object.assign(cvData.personal, privateData.personal);
+// Build CV function
+async function buildCv(yamlFileName) {
+  // Generate HTML
+  await generateHtml(yamlFileName);
+  
+  // Generate PDF
+  await generatePdf(yamlFileName);
+  
+  const outputFileName = formatFileName(yamlFileName);
+  console.log(`CV created successfully! File: dist/${outputFileName}`);
 }
 
-// Combine data
-const data = {
-	cv: cvData,
-	site: siteData,
-};
-
-// Minification options
-const minifyOptions = {
-	collapseWhitespace: true,
-	removeComments: true,
-	removeOptionalTags: true,
-	removeRedundantAttributes: true,
-	removeScriptTypeAttributes: true,
-	removeTagWhitespace: true,
-	useShortDoctype: true,
-	minifyCSS: true,
-};
-
-// Compile and minify a template
-async function compileAndMinifyTemplate(templatePath, outputPath) {
-	const renderedHtml = nunjucks.render(path.basename(templatePath), {
-		cv: cvData,
-		site: siteData,
-	});
-	// Skip minification in dev mode for Vite compatibility
-	const isDev = process.env.NODE_ENV !== "production";
-	const html = isDev ? renderedHtml : await minify(renderedHtml, minifyOptions);
-	fs.writeFileSync(outputPath, html);
-	console.log(`Compiled ${isDev ? "" : "and minified "}${outputPath}`);
+// Development mode function
+async function devMode(yamlFileName) {
+  // Generate HTML
+  await generateHtml(yamlFileName);
+  
+  console.log('Starting Vite preview server...');
+  
+  // Start Vite preview
+  const viteProcess = spawn('pnpm', ['exec', 'vite'], {stdio: 'inherit'});
+  
+  // Get YAML file path
+  const yamlFilePath = getYamlFilePath(yamlFileName);
+  console.log(`Watching for changes in: ${yamlFilePath}`);
+  
+  // Watch for changes in YAML file
+  fs.watch(yamlFilePath, async (eventType) => {
+    if (eventType === 'change') {
+      console.log(`Changes detected in ${yamlFilePath}, regenerating HTML...`);
+      try {
+        await generateHtml(yamlFileName);
+        console.log('HTML updated successfully');
+      } catch (err) {
+        console.error(`Error updating HTML: ${err.message}`);
+      }
+    }
+  });
+  
+  // Handle Vite process termination
+  viteProcess.on('close', (code) => {
+    console.log('Vite server stopped');
+    process.exit(code);
+  });
 }
 
-// Copy styles to output directory
-function copyStyles() {
-	const outStylesDir = path.join(outDir, "styles");
-	fs.ensureDirSync(outStylesDir);
-	fs.copySync(stylesDir, outStylesDir, { overwrite: true });
-	console.log(`Copied styles to: ${outStylesDir}`);
+// Main function
+async function main() {
+  try {
+    // Determine operation mode
+    const mode = process.argv[2] || 'build';
+    
+    // Prompt for YAML file name
+    const yamlFileName = await promptYamlFileName('YAML file name: cv-');
+    
+    // Run appropriate mode
+    if (mode === 'build') {
+      await buildCv(yamlFileName);
+    } else if (mode === 'dev') {
+      await devMode(yamlFileName);
+    } else {
+      console.error(`Unknown mode: ${mode}`);
+      console.log('Available modes: build, dev');
+      process.exit(1);
+    }
+  } catch (error) {
+    console.error(`An error occurred: ${error.message}`);
+    process.exit(1);
+  }
 }
 
-// Compile and minify index.njk
-(async () => {
-	copyStyles();
-	await compileAndMinifyTemplate(
-		path.join(srcDir, "index.njk"),
-		path.join(outDir, "index.html"),
-		data
-	);
-	// Add more templates if you need
-})();
+main();

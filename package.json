@@ -2,13 +2,11 @@
   "name": "quick-cv-generator",
   "author": "Vasya Dudin",
   "description": "Simple CV generator, makes PDF from YAML files",
-  "main": "generate_pdf.js",
+  "main": "",
   "license": "ISC",
   "scripts": {
-    "_build-html": "node scripts/build.js",
-    "_build-pdf": "wsl bash -c \"source venv/bin/activate && python scripts/generate_pdf.py\"",
-    "build": "npm run _build-html && npm run _build-pdf",
-    "dev": "npm run _build-html && vite"
+    "build": "node scripts/build.js build",
+    "dev": "node scripts/build.js dev"
   },
   "dependencies": {
     "fs-extra": "^11.3.2",
