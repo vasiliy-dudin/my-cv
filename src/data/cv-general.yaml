@@ -1,0 +1,112 @@
+---
+personal:
+  candidate name: Vasya Dudin
+  job title: Senior Product Designer
+  location: London, UK
+  link:
+    label: linkedin.com/in/vas-dudin
+    url: https://www.linkedin.com/in/vas-dudin/
+  email:
+    address: dudin.vasiliy@gmail.com
+  portfolio:
+    label: Portfolio
+    url: https://dudin.design
+summary:
+  title: Summary
+  paragraphs:
+  - Product Designer with 14+ years of experience in international SaaS, EdTech, E-Commerce and FinTech companies.
+  - Specialising in complex B2B/B2C products, design systems, user research, accessibility and inclusive design. Passionate about solving complex problems and creating products that scale.
+  - Working knowledge of frontend development (React, HTML, CSS, JavaScript) — enabling effective collaboration between design and development.
+skills:
+  title: Skills
+  skillset 1:
+    name: Core Skills
+    set:
+    - Complex product design, human-centred design, requirements gathering, heuristics, TRIZ, systems thinking and strategic vision.
+    - 'Expert in Figma and Axure RP: creating complex nested components with auto layout, plugins, and efficient layout organisation.'
+    - Design systems, design tokens, guidelines, perceptually balanced colour palettes, establishing implementation and updating processes.
+    - UX writing in English and Russian, information style.
+    - Attention to detail, ability to dive deeply into subjects when needed.
+  skillset 2:
+    name: UX Research and Product Analytics
+    set:
+    - Product metrics, data-driven and data-informed approaches.
+    - Usability testing, interviews, surveys, Jobs to be Done, Job Stories, card sorting, diary studies, A/B testing.
+    - 'Web analytics: Google Analytics, Amplitude, Yandex Metrica, Inspectlet, BigQuery, SQL.'
+  skillset 3:
+    name: Modelling and Mapping
+    set: User Flow, Customer Journey Mapping (CJM), information architecture, UML Use Case Diagram, UML Activity Diagram, BPMN, Scenario Map, Service Blueprint.
+  skillset 4:
+    name: Frontend
+    set: HTML, JavaScript, React, CSS, SCSS/SASS, 11ty, Git, accessibility. Communicating effectively with developers in their language.
+  skillset 5:
+    name: Accessibility and Inclusive Design
+    set: Improving design systems, design and development processes, conducting accessibility audits, writing guides on accessible design and development.
+  skillset 6:
+    name: Team Collaboration
+    set: Facilitation, process building, mentoring, providing feedback, presentation skills, cross-team collaboration, Scrum fundamentals, proactivity, open communication.
+experience:
+  title: Experience
+  last:
+    company: Lenta
+    job title: Senior Product Designer
+    time period: April 2025 – Present
+    location: Remote
+    achievements:
+    - 'Reduced support costs: designed a unified platform for all retail chains for managing customer profiles, purchase history and loyalty programmes.'
+    - 'Accelerated admin panel design and development: created from scratch a UI kit with 50+ components and an automated colour palette generation system for frontend.'
+    - 'Architected design system for all company brands: developed the system structure and projects, created a standardised design token system. Oversaw design system implementation and consulted the team — accelerated new feature releases and improved interface uniformity.'
+    - 'Simplified new employee adaptation: created a straightforward onboarding document with first-weeks checklist.'
+    - 'Led designers in the Picker team: handled hiring and onboarding, conducted 1:1s, optimised design processes and team interactions.'
+    description: Retail. Russia's largest hypermarket chain, 12M MAU, 5,800 shops.
+  previous:
+    company: Netology
+    job title: Senior Product Designer
+    time period: December 2022 — March 2025
+    location: Remote
+    achievements:
+    - Reduced costs for coordinators and support by decreasing manual team work. To achieve this, designed automated request processing, course suspension and extension, and automatic module access systems.
+    - Increased referral programme revenue and number of paying users coming through recommendations by redesigning and improving usability.
+    - Led the design and implementation of the design system. For this, planned a roadmap, introduced design tokens and a brightness perception-based colour palette, and unified components and styles.
+    - Conducted the first stage of global redesign. Planned and carried out user research, identified student problems, created information architecture diagrams, CJM and job stories, laying the foundation for further redesign.
+    - Optimised design processes and conducted workshops for designers and product managers. This improved the quality of design solutions and increased design speed.
+    description: "EdTech (B2C, B2B), 2M MAU. Second most popular additional education EdTech platform in Russia, . Team priorities: student motivation and goals, retention, usability, COR, NPS, churn, LMS."
+  third:
+    company: Yandex Practicum
+    job title: Senior Product Designer
+    time period: July 2021 — May 2022
+    location: Remote
+    achievements:
+    - Reduced support costs by 69% (52% → 16%) and improved parent engagement by 7% through design changes (new onboarding for parents and pupils, personal account design and login forms). To achieve this, analysed web analytics (user behaviour and Yandex.Metrica web viewer), created user flows and value stream maps, and analysed use case frequency.
+    - 'Mentored 2 team designers: trained in advanced Figma techniques (auto layout, complex components), helped with designing educational mechanics.'
+    - 'Led design system development: unified 50+ components and styles, implemented design tokens and a perceptually balanced colour palette, improved accessibility and text readability.'
+    description: EdTech. Top platform in Russia, offering 60+ professional IT bootcamps and courses. Part of Russia's largest tech company.
+  fourth:
+    company: Semrush
+    job title: Senior Product Designer
+    time period: June 2018 — January 2020
+    location: Saint Petersburg
+    achievements:
+    - Improved retention and ARPPU metrics in Site Audit and Oppty products. To achieve this, designed and enhanced interfaces for these services, analysed user feedback, studied web analytics (Google Analytics, BigQuery + SQL, Inspectlet) and conducted UX research (usability testing, interviews, surveys). Used Axure, information architecture, CJM, User Flow, scenario maps, BPMN, UML Activity Diagrams and Use Case Diagrams for design.
+    - Coordinated work with development, product teams, UI designers and UX writers throughout all development stages, presented solutions to stakeholders.
+    - Supplemented design system guides, wrote usability testing guidelines.
+    description: SaaS for digital marketers. 1.2M MAU in 2024, publicly traded company, acquired by Adobe.
+  fifth:
+    company: Binomo (404 Group)
+    job title: UX/UI Designer
+    time period: February 2018 — June 2018
+    location: Saint Petersburg
+  initial:
+    company: Freelance
+    job title: UX Designer
+    time period: June 2011 — February 2017
+    location: Saint Petersburg
+hobbies:
+  title: Hobbies
+  content: Frontend development, modular synthesizers, photography, DnD and games. Interested in architecture, urbanism, various aspects of design and shawarma.
+education:
+  title: Education
+  place: Saint Petersburg Mining University
+  degree: Institute of Information Systems and Computer Engineering, Information Systems and Technologies, incomplete higher education.
+  year: 2007—2012
+  location: Saint Petersburg
