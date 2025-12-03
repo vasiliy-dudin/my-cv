@@ -8,7 +8,7 @@ const fs = require('fs-extra');
  * @param {string} prompt - Prompt text
  * @returns {Promise<string>} YAML file name
  */
-function promptYamlFileName(prompt = 'Enter YAML file name (without extension): ') {
+function promptYamlFileName(prompt = 'Enter YAML file name: ') {
   const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
@@ -48,12 +48,11 @@ function runProcess(command, args, errorMessage) {
 /**
  * Formats a filename based on YAML file name
  * @param {string} yamlFileName - YAML file name
- * @param {string} prefix - File prefix
  * @param {string} extension - File extension
  * @returns {string} Formatted filename
  */
-function formatFileName(yamlFileName, prefix = 'cv', extension = '.pdf') {
-  return `${prefix}${yamlFileName !== 'default' ? '-' + yamlFileName : ''}${extension}`;
+function formatFileName(yamlFileName, extension = '.pdf') {
+  return `${yamlFileName}${extension}`;
 }
 
 /**
@@ -68,12 +67,23 @@ function generateHtml(yamlFileName) {
 /**
  * Generates PDF from HTML file
  * @param {string} yamlFileName - YAML file name
+ * @param {string} outputDir - Output directory (default: dist)
+ * @param {string} customPdfName - Custom name for PDF file (optional)
  * @returns {Promise<void>}
  */
-function generatePdf(yamlFileName) {
+function generatePdf(yamlFileName, outputDir = 'dist', customPdfName = null) {
+  // If the filename contains spaces, wrap it in quotes
+  let pdfNameArg = '';
+  if (customPdfName) {
+    const escapedName = customPdfName.includes(' ') ? 
+      `"${customPdfName.replace(/"/g, '\\"')}"` : 
+      customPdfName;
+    pdfNameArg = ` ${escapedName}`;
+  }
+  
   return runProcess(
     'wsl',
-    ['bash', '-c', `source venv/bin/activate && python scripts/_generate_pdf.py ${yamlFileName}`],
+    ['bash', '-c', `source venv/bin/activate && python scripts/_generate_pdf.py ${yamlFileName} ${outputDir}${pdfNameArg}`],
     'Error generating PDF'
   );
 }
@@ -84,7 +94,7 @@ function generatePdf(yamlFileName) {
  * @returns {boolean} Whether file exists
  */
 function yamlFileExists(yamlFileName) {
-  const yamlFileNameFull = formatFileName(yamlFileName, 'cv', '.yaml');
+  const yamlFileNameFull = formatFileName(yamlFileName, '.yaml');
   const yamlFilePath = path.join(__dirname, '..', 'src', 'data', yamlFileNameFull);
   return fs.existsSync(yamlFilePath);
 }
@@ -95,7 +105,7 @@ function yamlFileExists(yamlFileName) {
  * @returns {string} Path to file
  */
 function getYamlFilePath(yamlFileName) {
-  const yamlFileNameFull = formatFileName(yamlFileName, 'cv', '.yaml');
+  const yamlFileNameFull = formatFileName(yamlFileName, '', '.yaml');
   return path.join('src', 'data', yamlFileNameFull);
 }
 

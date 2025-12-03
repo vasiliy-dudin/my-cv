@@ -3,6 +3,7 @@
 /venv
 /test/
 /dist/
+/public/
 /.tmp/
 /.idea/
 /.DS_Store/

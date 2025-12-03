@@ -1,26 +1,13 @@
 # CV Generator
 
-Simple CV generator that builds HTML from templates and generates PDF using WeasyPrint.
+A simple CV generator that creates HTML from templates and PDF from HTML.
 
-All content is stored in simple YAML files, making it easy to quickly adapt your CV for specific job openings.
-
-## Tech Stack
-
-- **Templates**: [Nunjucks](https://mozilla.github.io/nunjucks/)
-- **PDF**: [WeasyPrint](https://weasyprint.org/) (Python)
-
-## Setup
-
-Install dependencies:
+## Installation
 
 ```bash
 pnpm install
-```
 
-Setup Python environment (WSL on Windows):
-
-```bash
-# In WSL
+# In WSL for WeasyPrint
 python3 -m venv venv
 source venv/bin/activate
 pip install weasyprint
@@ -28,78 +15,39 @@ pip install weasyprint
 
 ## Usage
 
-### Build Mode
-
-Build HTML and generate PDF with interactive YAML file name prompt:
+### Basic Commands
 
 ```bash
+# Create PDF with interactive YAML file selection
 pnpm run build
-```
 
-Build with YAML file name as parameter:
-
-```bash
+# Create PDF for a specific YAML file
 pnpm run build google
-```
 
-This will use `cv-google.yaml` and generate a corresponding PDF without prompting.
-
-### Development Mode
-
-Development mode with interactive YAML file name prompt:
-
-```bash
-pnpm run dev
-```
-
-Development mode with YAML file name as parameter:
-
-```bash
+# Development mode with auto-refresh
 pnpm run dev google
 ```
 
-Development mode will generate HTML from the corresponding YAML file and start a development server with live reload on YAML changes.
+### Parameters
+
+```bash
+# Save to public folder instead of dist
+pnpm run build cv-general public
+
+# Set output PDF filename
+pnpm run build cv-general pdf-name=my-resume
+
+# Filename with spaces (in quotes)
+pnpm run build cv-general pdf-name="My CV 2025"
+
+# Combine parameters
+pnpm run build cv-general public pdf-name="My CV"
+```
 
 ## File Structure
 
-- `src/data/cv-{name}.yaml` - CV data files for different companies/positions
-- `src/data/site.yaml` - Site-wide metadata
-- `src/data/cv.private.yaml` - Private data (optional, overrides public data)
+- `src/data/{name}.yaml` - CV data for different companies/positions
+- `src/data/site.yaml` - Common metadata
+- `src/data/cv.private.yaml` - Personal data (optional)
 - `.tmp/index.html` - Generated HTML for preview
-- `dist/cv-{name}.pdf` - Generated PDF files
-
-## Examples
-
-### Interactive Mode Examples
-
-To create a CV for Google with interactive prompt:
-
-```bash
-pnpm run build
-# When prompted, enter: google
-# This will use src/data/cv-google.yaml and create dist/cv-google.pdf
-```
-
-To work on a CV in development mode with interactive prompt:
-
-```bash
-pnpm run dev
-# When prompted, enter: google
-# This will start a dev server and watch src/data/cv-google.yaml for changes
-```
-
-### Parameter Mode Examples
-
-To create a CV for Google directly with parameter:
-
-```bash
-pnpm run build google
-# This will use src/data/cv-google.yaml and create dist/cv-google.pdf
-```
-
-To work on a CV in development mode with parameter:
-
-```bash
-pnpm run dev google
-# This will start a dev server and watch src/data/cv-google.yaml for changes
-```
+- `dist/{name}.pdf` - Generated PDF files

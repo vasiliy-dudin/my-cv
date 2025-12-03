@@ -4,8 +4,8 @@ const nunjucks = require("nunjucks");
 const { minify } = require("html-minifier-terser");
 const yaml = require('js-yaml');
 
-// Get company name from command line arguments
-const companyName = process.argv[2] || 'default';
+// Get file name from command line arguments
+const fileName = process.argv[2] || 'default';
 
 const srcDir = path.join(__dirname, "..", "src", "views");
 const outDir = path.join(__dirname, "..", ".tmp");
@@ -18,38 +18,37 @@ nunjucks.configure(srcDir, { autoescape: true });
 // Ensure the output directory exists
 fs.ensureDirSync(outDir);
 
-// Determine which CV file to use based on company name
-const cvFileName = `cv${companyName !== 'default' ? `-${companyName}` : ''}.yaml`;
-const cvFilePath = path.join(dataDir, cvFileName);
+// Determine which data file to use
+const dataFileName = `${fileName}.yaml`;
+const dataFilePath = path.join(dataDir, dataFileName);
 
-// Check if the company-specific CV file exists, otherwise use default
-let actualCvFilePath = cvFilePath;
-if (!fs.existsSync(cvFilePath) && companyName !== 'default') {
-    console.warn(`Warning: CV file for company "${companyName}" not found at ${cvFilePath}. Using default cv.yaml instead.`);
-    actualCvFilePath = path.join(dataDir, "cv.yaml");
+// Используем указанный файл
+let actualDataFilePath = dataFilePath;
+if (!fs.existsSync(dataFilePath)) {
+    console.warn(`Warning: File "${dataFilePath}" not found.`);
+    process.exit(1);
 }
 
 // Read YAML data
-const cvData = yaml.load(
-	fs.readFileSync(actualCvFilePath, "utf8")
+const userData = yaml.load(
+	fs.readFileSync(actualDataFilePath, "utf8")
 );
 const siteData = yaml.load(
 	fs.readFileSync(path.join(dataDir, "site.yaml"), "utf8")
 );
 
-// Имя компании используется только для выбора YAML файла
 
 // Merge private data if exists
 const privateDataPath = path.join(dataDir, "cv.private.yaml");
 if (fs.existsSync(privateDataPath)) {
 	const privateData = yaml.load(fs.readFileSync(privateDataPath, "utf8"));
 	// Deep merge: private data overrides public data
-	Object.assign(cvData.personal, privateData.personal);
+	Object.assign(userData.personal, privateData.personal);
 }
 
 // Combine data
 const data = {
-	cv: cvData,
+	cv: userData,
 	site: siteData,
 };
 
@@ -68,7 +67,7 @@ const minifyOptions = {
 // Compile and minify a template
 async function compileAndMinifyTemplate(templatePath, outputPath) {
 	const renderedHtml = nunjucks.render(path.basename(templatePath), {
-		cv: cvData,
+		cv: userData,
 		site: siteData,
 	});
 	// Skip minification in dev mode for Vite compatibility
