@@ -52,10 +52,17 @@ async function devMode(yamlFileName) {
 async function main() {
   try {
     // Determine operation mode
-    const mode = process.argv[2] || 'build';
+    const args = process.argv.slice(2);
+    const mode = args[0] || 'build';
     
-    // Prompt for YAML file name
-    const yamlFileName = await promptYamlFileName('YAML file name: cv-');
+    // Get YAML file name from args or prompt
+    let yamlFileName;
+    if (args.length > 1 && args[1]) {
+      yamlFileName = args[1];
+      console.log(`Using YAML file: cv-${yamlFileName}`);
+    } else {
+      yamlFileName = await promptYamlFileName('YAML file name: cv-');
+    }
     
     // Run appropriate mode
     if (mode === 'build') {
@@ -65,6 +72,7 @@ async function main() {
     } else {
       console.error(`Unknown mode: ${mode}`);
       console.log('Available modes: build, dev');
+      console.log('Usage: node scripts/build.js [mode] [yaml-file-name]');
       process.exit(1);
     }
   } catch (error) {

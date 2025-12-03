@@ -28,22 +28,37 @@ pip install weasyprint
 
 ## Usage
 
-Build HTML and generate PDF with YAML file name prompt:
+### Build Mode
+
+Build HTML and generate PDF with interactive YAML file name prompt:
 
 ```bash
 pnpm run build
 ```
 
-This will prompt you for a YAML file name (e.g., `google` for `cv-google.yaml`) and generate a corresponding PDF.
-
-Development mode:
+Build with YAML file name as parameter:
 
 ```bash
-# Dev mode with interactive YAML file name prompt
+pnpm run build google
+```
+
+This will use `cv-google.yaml` and generate a corresponding PDF without prompting.
+
+### Development Mode
+
+Development mode with interactive YAML file name prompt:
+
+```bash
 pnpm run dev
 ```
 
-This will ask you for a YAML file name, generate HTML from the corresponding YAML file, and start a development server with live reload on YAML changes.
+Development mode with YAML file name as parameter:
+
+```bash
+pnpm run dev google
+```
+
+Development mode will generate HTML from the corresponding YAML file and start a development server with live reload on YAML changes.
 
 ## File Structure
 
@@ -55,7 +70,9 @@ This will ask you for a YAML file name, generate HTML from the corresponding YAM
 
 ## Examples
 
-To create a CV for Google:
+### Interactive Mode Examples
+
+To create a CV for Google with interactive prompt:
 
 ```bash
 pnpm run build
@@ -63,10 +80,26 @@ pnpm run build
 # This will use src/data/cv-google.yaml and create dist/cv-google.pdf
 ```
 
-To work on a CV in development mode:
+To work on a CV in development mode with interactive prompt:
 
 ```bash
 pnpm run dev
 # When prompted, enter: google
+# This will start a dev server and watch src/data/cv-google.yaml for changes
+```
+
+### Parameter Mode Examples
+
+To create a CV for Google directly with parameter:
+
+```bash
+pnpm run build google
+# This will use src/data/cv-google.yaml and create dist/cv-google.pdf
+```
+
+To work on a CV in development mode with parameter:
+
+```bash
+pnpm run dev google
 # This will start a dev server and watch src/data/cv-google.yaml for changes
 ```
