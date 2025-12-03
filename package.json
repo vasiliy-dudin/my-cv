@@ -6,7 +6,8 @@
   "license": "ISC",
   "scripts": {
     "build": "node scripts/build.js build",
-    "dev": "node scripts/build.js dev"
+    "dev": "node scripts/build.js dev",
+    "deploy-pdfs": "vercel deploy ./public --prod"
   },
   "dependencies": {
     "fs-extra": "^11.3.2",
